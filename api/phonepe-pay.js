@@ -22,9 +22,9 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: "phone and amount are required" });
     }
 
-    const merchantId = process.env.PHONEPE_MERCHANT_ID;
-    const saltKey = process.env.PHONEPE_SALT_KEY;
-    const saltIndex = process.env.PHONEPE_SALT_INDEX || "1";
+    const merchantId = process.env.CLIENT_ID;
+    const saltKey = process.env.CLIENT_KEY;
+    const saltIndex = process.env.CLIENT_VERSION || "1";
 
     // UAT sandbox. Change to prod when live.
     const baseUrl =
